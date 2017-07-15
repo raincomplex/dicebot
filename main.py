@@ -7,15 +7,15 @@ from ircbot import IRCbot
 def main():
     cp = ConfigParser()
 
-    if not cp.read('dice.ini'):
-        f = open('dice.ini', 'w')
+    if not cp.read('dice.conf'):
+        f = open('dice.conf', 'w')
         print >> f, '[bot]'
         print >> f, 'nickname = dicebot'
         print >> f, 'channel = #dicebot'
         print >> f, 'server = irc.freenode.org'
         f.close()
 
-        print 'Please modify dice.ini and restart.'
+        print 'Please modify dice.conf and restart.'
         exit(1)
 
     nickname = cp.get('bot', 'nickname')
